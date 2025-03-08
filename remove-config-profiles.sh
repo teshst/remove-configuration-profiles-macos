@@ -21,6 +21,7 @@ find_root_volume() {
   return 1
 }
 
+# Removes and creates the /var/db/ConfigurationProfiles directory
 recreate_config_directory() {
 
   # Defines the target directory and settings directory
