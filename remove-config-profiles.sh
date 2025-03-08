@@ -1,6 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
 
-# Attempts to find a volume with a name that includes "- Data" to figure out the name of the root volume
+# Attempts to find a volume that includes "- Data" to figure out the name of the matching root volume
 find_root_volume() {
   
   local base_dir="/Volumes"
@@ -42,7 +42,7 @@ recreate_config_directory() {
 }
 
 # Call the function to find the root volume
-root_volume=$(find_root_volume)
+root_volume="$(find_root_volume)"
 
 # If default directory Macintosh HD
 if [ -d "/Volumes/Macintosh HD" ]; then
