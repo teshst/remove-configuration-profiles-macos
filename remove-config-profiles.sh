@@ -1,8 +1,9 @@
 #!/bin/zsh
 
-# Attempts to find a "- data" volume to figure out root volumes name
+# Attempts to find a volume with a name that includes "- Data" to figure out the name of the root volume
 find_root_volume() {
-  local base_dir="$1"
+  
+  local base_dir="/Volumes"
 
   # Loop through all volumes in the base directory
   for volume in "$base_dir"/*; do
@@ -41,7 +42,7 @@ recreate_config_directory() {
 }
 
 # Call the function to find the root volume
-root_volume=$(find_root_volume "/Volumes")
+root_volume=$(find_root_volume)
 
 # If default directory Macintosh HD
 if [ -d "/Volumes/Macintosh HD" ]; then
@@ -60,8 +61,9 @@ if [ -d "/Volumes/Macintosh HD" ]; then
 
   echo "Operation completed successfully."
 
-# If Macintosh HD doesnt exist than try to find the root volume
+# If Macintosh HD doesn't exist than try to find the root volume
 elif [ -n "$root_volume" ]; then
+
   echo "Found root volume: $root_volume"
 
   # Defines the target directory and settings directory
@@ -77,6 +79,7 @@ elif [ -n "$root_volume" ]; then
   recreate_config_directory "$target_dir"
 
   echo "Operation completed successfully."
+
 else
   echo "Error: Could not find the root volume"
   ls /Volumes
