@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Attempts to find a volume that includes "- Data" to figure out the name of the matching root volume
 find_root_volume() {
