@@ -1,7 +1,7 @@
 # Remove MacOS Configuration Profiles
 
 ## Purpose
-Can be used in recovery mode to automically remove and recreate the /var/db/ConfigurationProfiles directory on MacOS. This is useful when you are trying to remove MDM profiles that are locked and need to be removed.
+Can be used in recovery mode to automatically remove and recreate the /var/db/ConfigurationProfiles directory on MacOS. This is useful when you are trying to remove MDM profiles that are locked and need to be removed.
 
 
 ## How To Use
